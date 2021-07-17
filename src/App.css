@@ -11,15 +11,34 @@ html {
 	font-family: 'Space Mono', monospace;
 }
 
+.App {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.App h2 {
+	margin: 40px;
+	max-width: 60px;
+	word-break: break-all;
+}
+
 input{
-	font-family: 'Space Mono', monospace;;
+	font-family: 'Space Mono', monospace;
+	font-weight: 600 !important;
+}
+
+input:focus{
+	outline: none;
+	border: 2px solid hsl(183, 100%, 15%) !important;
 }
 
 .billing-form-container {
 	width: 60vw;
 	max-height: 65vh;
 	background-color: white;
-	border-radius: 20px;
+	border-radius: 10px;
 	display: grid;
 	grid-template-columns: auto auto;
 	justify-content: space-between;
@@ -48,7 +67,7 @@ input{
 	border: none;
 	background-color: hsl(189, 41%, 95%);
 	border: none;
-	border-radius: 10px;
+	border-radius: 5px;
 	width: 20vw;
 	height: 25px;
 	margin-top: 5px;
@@ -75,7 +94,7 @@ input{
 	width: 6vw;
 	height: 50px;
 	background-color: hsl(183, 100%, 15%);
-	border-radius: 10px;
+	border-radius: 5px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -87,7 +106,7 @@ input{
 
 
 .billing-form-tip input{
-	width: 4.5vw;
+	width: 4.8vw;
 	height: 32px;
 	margin: 0;
 	font-size: 1.2rem;
@@ -99,15 +118,20 @@ input{
 	width: 20vw;
 	height: 40vh;
 	background-color: hsl(183, 100%, 15%);
-	border-radius: 20px;
+	border-radius: 10px;
 	color: white;
 	font-size: 1rem;
 	padding: 4vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 .selected-tip{
 	background-color: hsl(172, 67%, 45%) !important;
 }
 .amount-container {
+	width: 20vw;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -140,7 +164,7 @@ input{
 .reset-btn {
 	width: 20vw;
 	height: 50px;
-	border-radius: 8px;
+	border-radius: 5px;
 	border: none;
 	font-size: 1.2rem;
 	color: hsl(183, 100%, 15%);
@@ -148,4 +172,103 @@ input{
 	background-color: hsl(185, 41%, 84%);
 	margin-top: 12vh;
 	cursor: pointer;
+}
+
+@media (max-width: 1210px) { 
+	html{
+		font-size: 0.8em;
+	}
+	.billing-form-container{
+		width: 80vw;
+	}
+	.billing-form, .total-amount-container, .reset-btn{
+		width: 35vw;
+	}
+	.amount-container {
+		width: 35vw;
+	}
+	.amount-container h1 {
+		max-width: 25vw;
+		font-size: 2rem;
+	}
+	.billing-form input{
+		width: 30vw;
+	}
+	.billing-form-tip{
+		width: 32vw;
+		grid-template-columns: 10vw 10vw 10vw ;
+	}
+	.billing-form-tip div{
+		width: 10vw;
+	}
+	.billing-form-tip input{
+		width: 8vw;
+	}
+}
+
+@media (max-width: 500px) {
+	.App h2 { 
+		display: none;
+	}
+	html {
+		align-items: flex-end;
+		font-size: 0.9em;
+		font-weight: 600;
+	}
+	.billing-form-container{
+		grid-template-columns: 80vw;
+		grid-template-rows: 45vh 35vh;
+		width: 90vw;
+		height: 90vh;
+		max-height: 80vh;
+		justify-content: center;
+		align-content: center;
+	}
+	.billing-form input {
+		height: 20px;
+	}
+	.billing-form {
+		align-self: baseline;
+		width: 80vw;
+	}
+	.billing-form input {
+		width: 80vw;
+	}
+	.billing-form-tip {
+		width: 85vw;
+		grid-template-columns: 25vw 25vw 25vw ;
+	}
+	.billing-form-tip div{ 
+		height: 45px;
+		border-radius: 5px;
+		width: 25vw;
+	}
+	.billing-form-tip input{
+		height: 28px;
+		width: 20vw;
+	}
+	.total-amount-container {
+		align-self: center;
+		justify-self: center;
+		width: 75vw;
+		height: 30vh;
+	}
+	.amount-container h1{
+		max-width: 50vw;
+	}
+	.amount-container {
+		width: 70vw;
+	}
+	.reset-btn {
+		width: 70vw;
+		margin-top: 2vh;
+	}
+}
+
+@media (max-height: 700px) {
+	.billing-form-container{
+		height: 90vh;
+		max-height: 90vh;
+		grid-template-rows: 50vh 40vh;
+	}
 }
