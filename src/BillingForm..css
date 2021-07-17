@@ -1,0 +1,14 @@
+html {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.billing-container {
+	width: 70vw;
+	height: 50vh;
+	background-color: aqua;
+}

@@ -1,38 +1,151 @@
-.App {
-  text-align: center;
+html {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: hsl(185, 41%, 84%);
+	color: hsl(183, 100%, 15%);
+	font-family: 'Space Mono', monospace;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input{
+	font-family: 'Space Mono', monospace;;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.billing-form-container {
+	width: 60vw;
+	max-height: 65vh;
+	background-color: white;
+	border-radius: 20px;
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content: space-between;
+	padding: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.billing-form {
+	width: 30vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.tip-container input {
+	/* display: none; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.billing-form .input-container{
+	display: flex;
+	flex-direction: column;
+}
+
+.billing-form input {
+	padding: 10px;
+	border: none;
+	background-color: hsl(189, 41%, 95%);
+	border: none;
+	border-radius: 10px;
+	width: 20vw;
+	height: 25px;
+	margin-top: 5px;
+	margin-bottom: 20px;
+	font-size: 1.2rem;
+	color: hsl(183, 100%, 15%);
+}
+
+.billing-form-tip {
+	margin-top: 5px;
+	width: 21vw;
+	display: grid;
+	grid-template-columns: 6vw 6vw 6vw ;
+	grid-template-rows: 50px 50px ;
+	align-items: center;
+	justify-items: center;
+	grid-row-gap: 10px;
+	grid-column-gap: 10px;
+	font-size: 1.2rem;
+	margin-bottom: 20px;
+}
+
+.billing-form-tip div{
+	width: 6vw;
+	height: 50px;
+	background-color: hsl(183, 100%, 15%);
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	cursor: pointer;
+	user-select: none;
+}
+
+
+
+.billing-form-tip input{
+	width: 4.5vw;
+	height: 32px;
+	margin: 0;
+	font-size: 1.2rem;
+	font-family: 'Space Mono', monospace;
+	color: hsl(183, 100%, 15%);
+}
+
+.total-amount-container {
+	width: 20vw;
+	height: 40vh;
+	background-color: hsl(183, 100%, 15%);
+	border-radius: 20px;
+	color: white;
+	font-size: 1rem;
+	padding: 4vw;
+}
+.selected-tip{
+	background-color: hsl(172, 67%, 45%) !important;
+}
+.amount-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.amount-container h1{
+	margin: 0;
+	font-size: 2.5rem;
+	color: hsl(172, 67%, 45%);
+	max-width: 20vw;
+	word-break: break-all;
+}
+
+.amount-desc {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.amount-desc h3, p {
+	margin: 0;
+	font-size: 0.9rem;
+}
+
+.amount-desc p {
+	color: hsl(185, 41%, 84%);
+}
+
+.reset-btn {
+	width: 20vw;
+	height: 50px;
+	border-radius: 8px;
+	border: none;
+	font-size: 1.2rem;
+	color: hsl(183, 100%, 15%);
+	font-weight: 600;
+	background-color: hsl(185, 41%, 84%);
+	margin-top: 12vh;
+	cursor: pointer;
 }
