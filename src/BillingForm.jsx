@@ -8,10 +8,12 @@ export default function BillingForm() {
 	const [peopleNum, setPeopleNum] = useState()
 
 	const handlleBill = (item, event) => {
-		const value = event.target.value ? parseInt(event.target.value) : ""
-		item === "bill" ? setBillAmount(value)
-		: item === "tip" ? setTipPerc(value)
-		: setPeopleNum(value)
+		if(event.target.value >= 0){
+			const value = event.target.value ? parseInt(event.target.value) : ""
+			item === "bill" ? setBillAmount(value)
+			: item === "tip" ? setTipPerc(value)
+			: setPeopleNum(value)
+		}
 	}
 	const handleTip = (value) => {
 		document.getElementById("billing-form-custom-input").value = ""
@@ -33,7 +35,7 @@ export default function BillingForm() {
 						Bill:
 					</label>
 					<input 
-						type="text" 
+						type="number" 
 						value={billAmount}
 						onChange={(e) =>handlleBill("bill", e)} 
 						id="billing-form-bill"
@@ -63,7 +65,7 @@ export default function BillingForm() {
 							50%
 						</div>
 						<input 
-							type="text" 
+							type="number" 
 							id="billing-form-custom-input"
 							placeholder="Custom"
 							onChange={(e) =>handlleBill("tip", e)} 
@@ -75,7 +77,7 @@ export default function BillingForm() {
 						No. of People:
 					</label>	
 					<input 
-						type="text" 
+						type="number" 
 						value={peopleNum}
 						onChange={(e) =>handlleBill("people", e)} 
 						id="billing-form-bill" 
